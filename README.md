@@ -32,10 +32,10 @@ options:
 
 # Screenshots & Examples:
 
-- **hello.hspal**
+- **hello.hspal**  
 ![Alt text](./images/hello_world.png)
 
-- **crackme.hspal** *(From UDCTF 2022)*
+- **crackme.hspal** *(From UDCTF 2022)*  
 ![Alt text](./images/crackme1.png)
 ![Alt text](./images/crackme2.png)
 
