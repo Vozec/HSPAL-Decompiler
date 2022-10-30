@@ -35,8 +35,8 @@ def intepret(i,ins):
 	op_code = ins[:2]
 	if(op_code == '00')  :return '| (%s) | %s | %s'%(str(i).zfill(3),ins,'var label && id=%s'%(ins[2:]))
 	elif(op_code == '01'):return '| (%s) | %s | %s'%(str(i).zfill(3),ins,'goto label %s'%(ins[2:]))
-	elif(op_code == '02'):return '| (%s) | %s | %s'%(str(i).zfill(3),ins,'pop 0x%s && goto label (%s)'%(ins[2:4],ins[2:4]))
-	elif(op_code == '03'):return '| (%s) | %s | %s'%(str(i).zfill(3),ins,'pop 0x%s%s'%(ins[2:4],' && skip next' if ins[2:4] != '00' else ''))
+	elif(op_code == '02'):return '| (%s) | %s | %s'%(str(i).zfill(3),ins,'pop stack[0x%s] && goto label (%s)'%(ins[2:4],ins[2:4]))
+	elif(op_code == '03'):return '| (%s) | %s | %s'%(str(i).zfill(3),ins,'pop stack[0x%s]%s'%(ins[2:4],' && skip next' if ins[2:4] != '00' else ''))
 	elif(op_code == '04'):return '| (%s) | %s | %s'%(str(i).zfill(3),ins,'exit (statut_code = 0x%s)\n'%ins[2:])
 
 	elif(op_code == '10'):return '| (%s) | %s | %s'%(str(i).zfill(3),ins,'push input_char stack[0x%s]'%ins[2:4])
